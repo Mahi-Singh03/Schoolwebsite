@@ -2,23 +2,23 @@ import { motion } from 'framer-motion';
 
 export default function Achievements() {
   const achievements = [
-    { year: 2023, title: "National Science Fair Champions", category: "Academic" },
-    { year: 2022, title: "State Basketball Tournament Winners", category: "Sports" },
-    { year: 2021, title: "Best Community Service Program", category: "Social" },
-    { year: 2020, title: "National Robotics Competition Finalists", category: "STEM" },
+    { year: 2026, title: "Infrastructure Upgradation", category: "Facilities" },
+    { year: 2025, title: "New Athletic Track Preparation", category: "Sports" },
+    { year: 2024, title: "Cultural Arts Program Initialized", category: "Arts" },
+    { year: 2023, title: "Best Competence Enhancement Initiative", category: "Academic" },
   ];
 
   const milestones = [
-    { number: "50+", label: "National Awards" },
-    { number: "100%", label: "College Acceptance" },
-    { number: "1st", label: "State Ranking" },
-    { number: "200+", label: "Alumni Network" },
+    { number: "100%", label: "Focus on Learning" },
+    { number: "50+", label: "Qualified Staff" },
+    { number: "2-3", label: "Years to CBSE Upgradation" },
+    { number: "2026", label: "Session Open" },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 pt-40">
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl">
+      <section className="pt-24 pb-12 px-4 bg-blue-600 rounded-3xl mx-4 lg:mx-auto max-w-[96%] mt-4">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function Achievements() {
             animate={{ opacity: 1 }}
             className="text-xl text-white opacity-90"
           >
-            Celebrating decades of academic and extracurricular achievements
+            Celebrating decades of academic and extracurricular achievements at United Public Sen. Sec. School
           </motion.p>
         </div>
       </section>
@@ -46,12 +46,12 @@ export default function Achievements() {
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl shadow-lg text-center"
+              className="bg-white p-6 rounded-xl shadow-lg text-center border-b-4 border-blue-600"
             >
               <div className="text-4xl font-bold text-blue-600 mb-2">
                 {milestone.number}
               </div>
-              <div className="text-gray-600">{milestone.label}</div>
+              <div className="text-gray-600 font-medium">{milestone.label}</div>
             </motion.div>
           ))}
         </div>
@@ -60,9 +60,9 @@ export default function Achievements() {
       {/* Achievements Timeline */}
       <section className="py-16 px-4 bg-gray-100">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Notable Achievements</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Notable Achievements & Milestones</h2>
           <div className="relative">
-            <div className="absolute left-1/2 w-1 bg-gray-300 h-full transform -translate-x-1/2" />
+            <div className="absolute left-1/2 w-1 bg-blue-200 h-full transform -translate-x-1/2" />
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
@@ -72,13 +72,13 @@ export default function Achievements() {
                 className={`mb-8 w-full md:w-1/2 ${index % 2 === 0 ? 'md:ml-0' : 'md:ml-auto'}`}
               >
                 <div className="relative pl-8 md:pl-0">
-                  <div className="absolute w-4 h-4 bg-blue-500 rounded-full left-0 md:left-auto md:right-[-8px] top-6" />
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                    <div className="text-blue-600 font-semibold mb-2">
+                  <div className="absolute w-6 h-6 bg-blue-600 border-4 border-white rounded-full left-[-11px] md:left-auto md:right-[-12px] top-6 z-10" />
+                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow ml-4 md:ml-0 md:mr-8 border-l-4 md:border-l-0 md:border-r-4 border-blue-600">
+                    <div className="text-blue-600 font-bold text-xl mb-1">
                       {achievement.year}
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{achievement.title}</h3>
-                    <span className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">
+                    <h3 className="text-xl font-bold mb-3 text-gray-800">{achievement.title}</h3>
+                    <span className="inline-block bg-blue-100 text-blue-800 font-semibold px-4 py-1 rounded-full text-sm">
                       {achievement.category}
                     </span>
                   </div>

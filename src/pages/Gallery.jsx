@@ -1,16 +1,27 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import img1 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.23 AM.jpeg';
+import img2 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.24 AM.jpeg';
+import img3 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.25 AM.jpeg';
+import img4 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.26 AM.jpeg';
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   
-  // Dummy gallery data
+  // Real gallery data
   const galleryItems = [
-    { id: 1, category: 'campus', image: 'placeholder.jpg' },
-    { id: 2, category: 'events', image: 'placeholder.jpg' },
-    { id: 3, category: 'sports', image: 'placeholder.jpg' },
-    // Add more items...
+    { id: 1, category: 'campus', image: img1, title: 'Campus View' },
+    { id: 2, category: 'events', image: img2, title: 'Annual Event' },
+    { id: 3, category: 'sports', image: img3, title: 'Sports Day' },
+    { id: 4, category: 'campus', image: img4, title: 'School Building' },
   ];
+
+  const categories = ['all', 'campus', 'events', 'sports'];
+
+  // Filter items based on category
+  const filteredItems = selectedCategory === 'all' 
+    ? galleryItems 
+    : galleryItems.filter(item => item.category === selectedCategory);
 
   // Animation variants
   const fadeInUp = {
@@ -23,9 +34,9 @@ export default function Gallery() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50  pt-40 ">
+    <div className="min-h-screen bg-gray-50 pt-40">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl ">
+      <section className="pt-24 pb-16 px-4 bg-blue-600 rounded-3xl mx-4 lg:mx-auto max-w-[96%] mt-4">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -39,7 +50,7 @@ export default function Gallery() {
             animate={{ opacity: 1 }}
             className="text-xl text-white/90 max-w-2xl mx-auto"
           >
-            Explore life at our institution through these captivating moments
+            Explore life at United Public Sen. Sec. School through these captivating moments
           </motion.p>
         </div>
       </section>
@@ -49,16 +60,16 @@ export default function Gallery() {
         initial="hidden"
         animate="visible"
         variants={stagger}
-        className="max-w-7xl mx-auto px-4 py-12 flex justify-center gap-4"
+        className="max-w-7xl mx-auto px-4 py-12 flex justify-center gap-4 flex-wrap"
       >
-        {['all', 'campus', 'events', 'sports'].map((category) => (
+        {categories.map((category) => (
           <motion.button
             key={category}
             variants={fadeInUp}
             onClick={() => setSelectedCategory(category)}
-            className={`px-6 py-2 rounded-full ${
+            className={`px-6 py-2 rounded-full font-semibold transition-colors ${
               selectedCategory === category 
-                ? 'bg-indigo-600 text-white' 
+                ? 'bg-blue-600 text-white' 
                 : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
             }`}
           >
@@ -72,25 +83,24 @@ export default function Gallery() {
         initial="hidden"
         animate="visible"
         variants={stagger}
-        className="max-w-7xl mx-auto px-4 pb-24 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        className="max-w-7xl mx-auto px-4 pb-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
       >
-        {galleryItems.map((item, index) => (
+        {filteredItems.map((item) => (
           <motion.div
             key={item.id}
             variants={fadeInUp}
+            layout
             className="aspect-square relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
           >
-            <div className="absolute inset-0 bg-gray-300 animate-pulse" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent" />
+            <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
             <motion.div
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              className="absolute inset-0 flex items-end p-4 text-white"
+              className="absolute inset-0 flex items-end p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
             >
-              <div className="translate-y-8 group-hover:translate-y-0 transition-transform">
-                <h3 className="font-bold text-lg">Image Title</h3>
-                <p className="text-sm opacity-90">Category: {item.category}</p>
+              <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="font-bold text-xl mb-1">{item.title}</h3>
+                <p className="text-sm text-blue-300 font-medium uppercase tracking-wider">{item.category}</p>
               </div>
             </motion.div>
           </motion.div>

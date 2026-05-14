@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import chairmanImg from '../assets/images/UI/chairman.png';
+import principalImg from '../assets/images/UI/principal.png';
 
 export default function About() {
   // Animation variants
@@ -11,36 +13,28 @@ export default function About() {
     visible: { transition: { staggerChildren: 0.1 } }
   };
 
-  // Timeline data
-  const history = [
-    { year: '1990', title: 'Foundation', description: 'Established with a vision for quality education' },
-    { year: '2005', title: 'Expansion', description: 'New campus built with modern facilities' },
-    { year: '2020', title: 'Recognition', description: 'Awarded Best Educational Institution' },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50 pt-40">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl ">
+      <section className="pt-24 pb-16 px-4 bg-blue-600 rounded-3xl mx-4 lg:mx-auto max-w-[96%] mt-4">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
-            About Our Institution
+            United Public Sen. Sec. School
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-xl text-white/90 max-w-2xl mx-auto"
           >
-            Nurturing excellence through innovation and tradition
+            Affiliated to Punjab School Education Board | Session 2026-27<br/>
+            Nurturing excellence through competence enhancement and learning based curriculum
           </motion.p>
         </div>
       </section>
-
-      
 
       {/* Values Section */}
       <section className="py-24 px-4 bg-white">
@@ -61,17 +55,21 @@ export default function About() {
             variants={stagger}
             className="grid md:grid-cols-3 gap-8"
           >
-            {['Integrity', 'Excellence', 'Innovation'].map((value, index) => (
+            {['Excellence in Education', 'Holistic Development', 'Modern Facilities'].map((value, index) => (
               <motion.div
                 key={value}
                 variants={fadeInUp}
-                className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-indigo-100 transition-colors"
+                className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-blue-100 transition-colors"
               >
-                <div className="bg-indigo-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  <span className="text-indigo-600 text-2xl">★</span>
+                <div className="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-blue-600 text-2xl">★</span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-800">{value}</h3>
-                <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-gray-600">
+                  {index === 0 && 'More emphasis on competence enhancement and learning based educational curriculum.'}
+                  {index === 1 && 'Introduction of various cultural and art activities like Classical music, Painting, and more.'}
+                  {index === 2 && 'Fully equipped with neat classrooms, pure drinking water, washrooms, medical check up and dedicated staff.'}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -94,22 +92,33 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             variants={stagger}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
           >
-            {['Principal', 'Vice Principal', 'Dean'].map((role, index) => (
-              <motion.div
-                key={role}
-                variants={fadeInUp}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="bg-gray-300 aspect-square rounded-xl mb-6 overflow-hidden">
-                  <div className="w-full h-full animate-pulse" />
-                </div>
-                <h3 className="text-2xl font-bold mb-2 text-gray-800">Dr. John Smith</h3>
-                <p className="text-indigo-600 mb-4">{role}</p>
-                <p className="text-gray-600">Experienced educator with 20+ years in academic leadership.</p>
-              </motion.div>
-            ))}
+            <motion.div
+              variants={fadeInUp}
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center"
+            >
+              <div className="bg-gray-300 aspect-square rounded-xl mb-6 overflow-hidden max-w-[250px] mx-auto">
+                <img src={chairmanImg} alt="Jasvir Singh" className="w-full h-full object-cover object-top" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-gray-800">Jasvir Singh</h3>
+              <p className="text-blue-600 mb-4 font-semibold text-lg">Chairman</p>
+              <p className="text-gray-600">Young and dynamic leadership focusing on improved infrastructure and facilities.</p>
+              <p className="text-sm font-bold text-gray-800 mt-2">M: 73476-23250</p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center"
+            >
+              <div className="bg-gray-300 aspect-square rounded-xl mb-6 overflow-hidden max-w-[250px] mx-auto">
+                <img src={principalImg} alt="Gagandeep Singh" className="w-full h-full object-cover object-top" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2 text-gray-800">Gagandeep Singh</h3>
+              <p className="text-blue-600 mb-4 font-semibold text-lg">Principal</p>
+              <p className="text-gray-600">Dedicated to providing each student with an opportunity to have an exposure to excellence.</p>
+              <p className="text-sm font-bold text-gray-800 mt-2">Mob: 90418-98480</p>
+            </motion.div>
           </motion.div>
         </div>
       </section>

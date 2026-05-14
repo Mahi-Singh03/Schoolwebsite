@@ -23,8 +23,8 @@ const Navbar = () => {
               alt="United School Logo" 
               className="h-12 w-12 md:h-20 md:w-20 transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="text-white text-xl md:text-3xl font-bold font-sans transition-colors duration-300">
-              United Public School
+            <span className="text-white text-xl md:text-2xl lg:text-3xl font-bold font-sans transition-colors duration-300">
+              United Public Sen. Sec. School
             </span>
           </Link>
 
