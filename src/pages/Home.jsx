@@ -3,10 +3,15 @@ import { motion, useInView, AnimatePresence, useScroll, useTransform } from 'fra
 import principalImg from '../assets/images/UI/principal.png';
 import chairmanImg from '../assets/images/UI/chairman.png';
 import galleryImg1 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.23 AM.jpeg';
-import heroImg from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 11.16.08 AM.jpeg';
+import heroImg from '../assets/images/UI/WhatsApp Image 2026-03-26 at 11.16.08 AM.jpeg';
 import galleryImg2 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.24 AM.jpeg';
+import galleryImg2b from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.24 Ak.jpeg';
 import galleryImg3 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.25 AM.jpeg';
 import galleryImg4 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.26 AM.jpeg';
+import galleryImg5 from '../assets/images/gallery/WhatsApp Image 2026-05-14 at 1.40.13 PM.jpeg';
+import galleryImg6 from '../assets/images/gallery/WhatsApp Image 2026-05-14 at 1.40.14 PM.jpeg';
+import galleryImg7 from '../assets/images/gallery/WhatsApp Image 2026-05-14 at 1.40.15 PM.jpeg';
+import galleryImg8 from '../assets/images/gallery/WhatsApp Image 2026-05-14 at 1.40.15 PM1.jpeg';
 
 // Icons
 const BookIcon = () => (<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>);
@@ -90,7 +95,14 @@ export default function Home() {
     { question: "What extracurriculars are available?", answer: "We focus heavily on overall development with sports, classical music, art classes, career counselling, AI, and basic computer skills." }
   ];
 
-  const previewImages = [galleryImg1, galleryImg2, galleryImg3, galleryImg4];
+  const previewImages = [
+    galleryImg1,
+    galleryImg2,
+    galleryImg2b,
+    galleryImg3,
+    galleryImg4,
+    galleryImg5
+  ];
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },

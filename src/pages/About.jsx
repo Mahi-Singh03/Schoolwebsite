@@ -98,7 +98,7 @@ export default function About() {
               variants={fadeInUp}
               className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center"
             >
-              <div className="bg-gray-300 aspect-square rounded-xl mb-6 overflow-hidden max-w-[250px] mx-auto">
+              <div className="bg-gray-300 aspect-square rounded-xl mb-6 overflow-hidden max-w-[240px] mx-auto">
                 <img src={chairmanImg} alt="Jasvir Singh" className="w-full h-full object-cover object-top" />
               </div>
               <h3 className="text-2xl font-bold mb-2 text-gray-800">Jasvir Singh</h3>
@@ -111,7 +111,7 @@ export default function About() {
               variants={fadeInUp}
               className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center"
             >
-              <div className="bg-gray-300 aspect-square rounded-xl mb-6 overflow-hidden max-w-[250px] mx-auto">
+              <div className="bg-gray-300 aspect-square rounded-xl mb-6 overflow-hidden  h-[240px] max-w-[240px] mx-auto">
                 <img src={principalImg} alt="Gagandeep Singh" className="w-full h-full object-cover object-top" />
               </div>
               <h3 className="text-2xl font-bold mb-2 text-gray-800">Gagandeep Singh</h3>

@@ -2,21 +2,34 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import img1 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.23 AM.jpeg';
 import img2 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.24 AM.jpeg';
-import img3 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.25 AM.jpeg';
-import img4 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.26 AM.jpeg';
+import img3 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.24 Ak.jpeg';
+import img4 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.25 AM.jpeg';
+import img5 from '../assets/images/gallery/WhatsApp Image 2026-03-26 at 10.37.26 AM.jpeg';
+
+import img7 from '../assets/images/gallery/WhatsApp Image 2026-05-14 at 1.40.13 PM.jpeg';
+import img8 from '../assets/images/gallery/WhatsApp Image 2026-05-14 at 1.40.14 PM.jpeg';
+import img9 from '../assets/images/gallery/WhatsApp Image 2026-05-14 at 1.40.15 PM.jpeg';
+import img10 from '../assets/images/gallery/WhatsApp Image 2026-05-14 at 1.40.15 PM1.jpeg';
+
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   
   // Real gallery data
   const galleryItems = [
-    { id: 1, category: 'campus', image: img1, title: 'Campus View' },
-    { id: 2, category: 'events', image: img2, title: 'Annual Event' },
-    { id: 3, category: 'sports', image: img3, title: 'Sports Day' },
-    { id: 4, category: 'campus', image: img4, title: 'School Building' },
+    { id: 1, category: 'campus', image: img1, title: 'Staff Portrait' },
+    { id: 2, category: 'campus', image: img2, title: 'Staff Portrait' },
+    { id: 3, category: 'events', image: img3, title: 'Staff Ceremony' },
+    { id: 4, category: 'events', image: img4, title: 'Annual Gathering' },
+    { id: 5, category: 'events', image: img5, title: 'Event Moments' },
+   
+    { id: 7, category: 'sports', image: img7, title: 'Student Achievement' },
+    { id: 8, category: 'sports', image: img8, title: 'Student Achievement' },
+    { id: 9, category: 'admissions', image: img9, title: 'Admissions Open' },
+    { id: 10, category: 'classroom', image: img10, title: 'Classroom Learning' },
   ];
 
-  const categories = ['all', 'campus', 'events', 'sports'];
+  const categories = ['all', 'campus', 'events', 'sports', 'admissions', 'classroom'];
 
   // Filter items based on category
   const filteredItems = selectedCategory === 'all' 
