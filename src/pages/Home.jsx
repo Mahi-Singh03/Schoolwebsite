@@ -68,7 +68,7 @@ export default function Home() {
     message: "Under the young and dynamic leadership of Chairman Jasvir Singh & Principal Gagandeep Singh, we offer much improved infrastructure and facilities aimed at providing each student with an opportunity to excel in academic, cultural, and sporting arenas.",
     leaders: [
       {
-        name: "Jasvir Singh",
+        name: "Jasbir Chhawla",
         role: "Chairman",
         image: chairmanImg,
         imageClassName: "object-cover object-top"
