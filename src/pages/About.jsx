@@ -101,7 +101,7 @@ export default function About() {
               <div className="bg-gray-300 aspect-square rounded-xl mb-6 overflow-hidden max-w-[240px] mx-auto">
                 <img src={chairmanImg} alt="Jasvir Singh" className="w-full h-full object-cover object-top" />
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-800">Jasvir Singh</h3>
+              <h3 className="text-2xl font-bold mb-2 text-gray-800">Jasbir Chhawla</h3>
               <p className="text-blue-600 mb-4 font-semibold text-lg">Chairman</p>
               <p className="text-gray-600">Young and dynamic leadership focusing on improved infrastructure and facilities.</p>
               <p className="text-sm font-bold text-gray-800 mt-2">M: 73476-23250</p>
